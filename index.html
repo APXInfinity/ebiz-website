@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EBiZ Solutions and Supplies — Made Together</title>
+  <meta name="description" content="EBiZ Solutions and Supplies — Full sublimation printing, custom uniforms, athletic wear, and apparel manufacturing. Design to production, made together since 2009.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #1a1a2e;
+      background: #ffffff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --primary: #1a1a2e;
+      --primary-light: #2d2d44;
+      --accent-gradient: linear-gradient(90deg, #00c4cc, #7b2ff7, #ff0080, #ff6a00, #ffd500);
+      --accent-cyan: #00c4cc;
+      --accent-purple: #7b2ff7;
+      --accent-pink: #ff0080;
+      --accent-orange: #ff6a00;
+      --gray-50: #f8f9fa;
+      --gray-100: #f1f3f5;
+      --gray-200: #e9ecef;
+      --gray-400: #ced4da;
+      --gray-600: #6c757d;
+      --gray-800: #343a40;
+      --white: #ffffff;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 20px rgba(0,0,0,0.1);
+      --shadow-lg: 0 10px 40px rgba(0,0,0,0.12);
+      --radius: 12px;
+      --max-width: 1200px;
+    }
+
+    /* ===== UTILITY ===== */
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--gray-600);
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    /* ===== GRADIENT BAR (brand element) ===== */
+    .gradient-bar {
+      height: 4px;
+      background: var(--accent-gradient);
+      width: 80px;
+      border-radius: 2px;
+    }
+
+    /* ===== NAVIGATION ===== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--gray-200);
+      transition: all 0.3s ease;
+    }
+    .navbar.scrolled { box-shadow: var(--shadow-md); }
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+    .nav-logo .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+    .nav-logo .logo-tagline {
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gray-600);
+    }
+    .nav-logo .logo-bar {
+      height: 3px;
+      width: 100%;
+      background: var(--accent-gradient);
+      border-radius: 2px;
+      margin-top: 2px;
+    }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      transition: color 0.3s;
+      position: relative;
+    }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-gradient);
+      transition: width 0.3s;
+    }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta {
+      padding: 10px 24px;
+      background: var(--primary);
+      color: var(--white) !important;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .nav-cta:hover { background: var(--primary-light); transform: translateY(-1px); }
+    .nav-cta::after { display: none !important; }
+
+    /* Mobile menu toggle */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .menu-toggle span {
+      width: 24px;
+      height: 2px;
+      background: var(--primary);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 140px 0 100px;
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(0,196,204,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      left: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(123,47,247,0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .hero-content { position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gray-600);
+      margin-bottom: 24px;
+    }
+    .hero-badge .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-cyan);
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+    .hero h1 .highlight {
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-tagline {
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: var(--gray-600);
+      margin-bottom: 24px;
+      letter-spacing: 0.5px;
+    }
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--gray-600);
+      line-height: 1.8;
+      margin-bottom: 36px;
+      max-width: 500px;
+    }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      background: var(--primary);
+      color: var(--white);
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--primary-light); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--gray-200);
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    .btn-secondary:hover { border-color: var(--primary); transform: translateY(-2px); }
+
+    /* Hero image collage */
+    .hero-visual {
+      position: relative;
+      z-index: 1;
+    }
+    .hero-collage {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .hero-collage .collage-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: transform 0.3s;
+    }
+    .hero-collage .collage-item:hover { transform: translateY(-4px); }
+    .hero-collage .collage-item:nth-child(2) { margin-top: 30px; }
+    .hero-collage .collage-item:nth-child(3) { margin-top: -30px; }
+    .hero-collage .collage-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    /* ===== STATS BAR ===== */
+    .stats-bar {
+      padding: 48px 0;
+      background: var(--primary);
+      position: relative;
+    }
+    .stats-bar::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--accent-gradient);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      text-align: center;
+    }
+    .stat-item h3 {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 4px;
+    }
+    .stat-item p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* ===== SERVICES ===== */
+    .services {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .services-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .services-header .section-subtitle { margin: 0 auto; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .service-card {
+      padding: 40px 32px;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius);
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--accent-gradient);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .service-card:hover {
+      background: var(--white);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+    .service-card:hover::before { opacity: 1; }
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .service-icon svg { width: 28px; height: 28px; color: var(--white); }
+    .service-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+    .service-card p {
+      font-size: 0.93rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+
+    /* ===== PORTFOLIO ===== */
+    .portfolio {
+      padding: 100px 0;
+      background: var(--gray-50);
+    }
+    .portfolio-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .portfolio-header .section-subtitle { margin: 0 auto; }
+    .portfolio-filters {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: 8px 20px;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--primary);
+      color: var(--white);
+      border-color: var(--primary);
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .portfolio-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      background: var(--white);
+    }
+    .portfolio-item img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .portfolio-item:hover img { transform: scale(1.05); }
+    .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26,26,46,0.85) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+    }
+    .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+    .portfolio-overlay span {
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* ===== ABOUT ===== */
+    .about {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .about .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-content .section-subtitle { margin-bottom: 24px; }
+    .about-text {
+      font-size: 0.95rem;
+      color: var(--gray-600);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .about-highlight {
+      padding: 24px;
+      background: var(--gray-50);
+      border-left: 4px solid;
+      border-image: var(--accent-gradient) 1;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin: 28px 0;
+    }
+    .about-highlight p {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--primary);
+      font-style: italic;
+      line-height: 1.7;
+    }
+    .about-values {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .value-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .value-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--gray-50);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .value-icon svg { width: 18px; height: 18px; color: var(--accent-purple); }
+    .value-item h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 2px;
+    }
+    .value-item p {
+      font-size: 0.8rem;
+      color: var(--gray-600);
+    }
+
+    /* About visual */
+    .about-visual {
+      position: relative;
+    }
+    .about-image-main {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .about-image-main img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+    .about-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: var(--primary);
+      color: var(--white);
+      padding: 24px;
+      border-radius: var(--radius);
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+    }
+    .about-badge .badge-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+    .about-badge .badge-text {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.7;
+      margin-top: 4px;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact {
+      padding: 100px 0;
+      background: var(--gray-50);
+    }
+    .contact .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .contact-info { padding-right: 20px; }
+    .contact-info .section-subtitle { margin-bottom: 40px; }
+    .contact-methods { display: flex; flex-direction: column; gap: 24px; }
+    .contact-method {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .contact-method-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-method-icon svg { width: 22px; height: 22px; color: var(--white); }
+    .contact-method h4 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .contact-method p {
+      font-size: 0.95rem;
+      color: var(--gray-600);
+    }
+    .contact-method a {
+      color: var(--gray-600);
+      transition: color 0.3s;
+    }
+    .contact-method a:hover { color: var(--accent-purple); }
+
+    /* Contact form */
+    .contact-form-wrapper {
+      background: var(--white);
+      padding: 40px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+    }
+    .contact-form-wrapper h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 24px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: var(--primary);
+      transition: border-color 0.3s;
+      background: var(--gray-50);
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--accent-cyan);
+      background: var(--white);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .btn-submit {
+      width: 100%;
+      padding: 14px 32px;
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      border-radius: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .btn-submit:hover { background: var(--primary-light); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--primary);
+      color: rgba(255,255,255,0.7);
+      padding: 60px 0 0;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 48px;
+    }
+    .footer-brand .footer-logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .footer-brand .footer-tagline {
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .footer-brand .footer-bar {
+      height: 3px;
+      width: 60px;
+      background: var(--accent-gradient);
+      border-radius: 2px;
+      margin-bottom: 16px;
+    }
+    .footer-brand p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      max-width: 320px;
+    }
+    .footer-col h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+    .footer-col ul li { margin-bottom: 12px; }
+    .footer-col ul li a {
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+    .footer-col ul li a:hover { color: var(--white); }
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+    .footer-social a:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+    .footer-social a svg { width: 18px; height: 18px; color: var(--white); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+    }
+    .footer-bottom-gradient {
+      height: 4px;
+      background: var(--accent-gradient);
+    }
+
+    /* ===== LIGHTBOX ===== */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.9);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: var(--radius);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+    }
+    .lightbox-close:hover { background: rgba(255,255,255,0.3); }
+    .lightbox-close svg { width: 24px; height: 24px; color: var(--white); }
+
+    /* ===== SCROLL ANIMATIONS ===== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 992px) {
+      .hero .container { grid-template-columns: 1fr; gap: 40px; }
+      .hero-visual { order: -1; }
+      .hero-collage { grid-template-columns: repeat(3, 1fr); }
+      .hero-collage .collage-item:nth-child(2) { margin-top: 0; }
+      .hero-collage .collage-item:nth-child(3) { margin-top: 0; }
+      .hero-collage .collage-item:nth-child(4) { display: none; }
+      .hero-collage .collage-item img { height: 180px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .portfolio-grid { grid-template-columns: repeat(3, 1fr); }
+      .about .container { grid-template-columns: 1fr; gap: 40px; }
+      .about-visual { order: -1; }
+      .contact .container { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        padding: 24px;
+        gap: 16px;
+        border-bottom: 1px solid var(--gray-200);
+        box-shadow: var(--shadow-md);
+      }
+      .nav-links.open { display: flex; }
+      .menu-toggle { display: flex; }
+      .hero { padding: 110px 0 60px; }
+      .hero-collage { grid-template-columns: 1fr 1fr; }
+      .hero-collage .collage-item:nth-child(3),
+      .hero-collage .collage-item:nth-child(4) { display: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+      .portfolio-item img { height: 200px; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+      .about-values { grid-template-columns: 1fr; }
+      .about-badge { position: static; margin-top: 16px; display: inline-block; }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 2.2rem; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn-primary,
+      .hero-actions .btn-secondary { width: 100%; justify-content: center; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .portfolio-item img { height: 260px; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .contact-form-wrapper { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo">
+        <div class="logo-text">
+          <span>EBiZ</span>
+          <div class="logo-bar"></div>
+          <span class="logo-tagline">Made Together.</span>
+        </div>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="nav-cta">Get in Touch</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content fade-up">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Trusted Since 2009
+        </div>
+        <h1>Your Vision,<br><span class="highlight">Made Together.</span></h1>
+        <p class="hero-tagline">Full Sublimation Printing &amp; Apparel Manufacturing</p>
+        <p>From concept to finished product — we deliver premium sublimation apparel for businesses, schools, government agencies, sports teams, and organizations across the Philippines.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">
+            Start Your Order
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#portfolio" class="btn-secondary">
+            View Our Work
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual fade-up">
+        <div class="hero-collage">
+          <div class="collage-item">
+            <img src="images/portfolio-deped-uniform.jpg" alt="DepEd sublimation polo uniform" loading="lazy">
+          </div>
+          <div class="collage-item">
+            <img src="images/portfolio-fullsub-tshirt.jpg" alt="Full sublimation t-shirt design" loading="lazy">
+          </div>
+          <div class="collage-item">
+            <img src="images/portfolio-org-polo.jpg" alt="Organization polo sublimation" loading="lazy">
+          </div>
+          <div class="collage-item">
+            <img src="images/portfolio-sports-comp.jpg" alt="Sports competition jersey" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item fade-up">
+          <h3>16+</h3>
+          <p>Years of Experience</p>
+        </div>
+        <div class="stat-item fade-up">
+          <h3>1000+</h3>
+          <p>Orders Completed</p>
+        </div>
+        <div class="stat-item fade-up">
+          <h3>100%</h3>
+          <p>Custom Designs</p>
+        </div>
+        <div class="stat-item fade-up">
+          <h3>B2B &amp; Retail</h3>
+          <p>Service Model</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="services-header fade-up">
+        <p class="section-label">What We Do</p>
+        <h2 class="section-title">End-to-End Apparel Solutions</h2>
+        <p class="section-subtitle">From initial design concept to final production and fulfillment, we handle every step of the process with precision and care.</p>
+      </div>
+      <div class="services-grid">
+        <!-- Card 1 -->
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Full Sublimation Printing</h3>
+          <p>Vivid, edge-to-edge full-color printing on polyester fabric. Designs that never crack, peel, or fade — built to last through countless washes and wears.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3>Cut &amp; Sew Manufacturing</h3>
+          <p>Precision pattern-making and expert sewing by our team of skilled local sewers. Each piece is carefully constructed to meet exact specifications and quality standards.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5l6.74-6.76z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg>
+          </div>
+          <h3>Custom Design Services</h3>
+          <p>Our in-house design team brings your vision to life. From logos and layouts to full mockup presentations, we create designs that stand out and represent your brand.</p>
+        </div>
+        <!-- Card 4 -->
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <h3>Bulk &amp; Team Orders</h3>
+          <p>Scalable production for teams, schools, companies, and organizations. Whether 20 pieces or 2,000 — we deliver consistent quality on every order.</p>
+        </div>
+        <!-- Card 5 -->
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+          </div>
+          <h3>Corporate &amp; School Uniforms</h3>
+          <p>Professional uniform programs for offices, schools, and government agencies. Consistent branding with comfortable, durable fabrics designed for daily wear.</p>
+        </div>
+        <!-- Card 6 -->
+        <div class="service-card fade-up">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </div>
+          <h3>Athletic &amp; Sports Wear</h3>
+          <p>High-performance jerseys, singlets, and activewear for runners, basketball teams, and sports organizations. Breathable fabrics with vibrant, lasting prints.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="portfolio-header fade-up">
+        <p class="section-label">Our Work</p>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">A showcase of our sublimation printing and apparel manufacturing work for clients across various sectors.</p>
+      </div>
+      <div class="portfolio-filters fade-up">
+        <button class="filter-btn active" onclick="filterPortfolio('all')">All Work</button>
+        <button class="filter-btn" onclick="filterPortfolio('athletic')">Athletic Wear</button>
+        <button class="filter-btn" onclick="filterPortfolio('uniform')">Uniforms</button>
+        <button class="filter-btn" onclick="filterPortfolio('events')">Events</button>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item fade-up" data-category="uniform" onclick="openLightbox(this)">
+          <img src="images/portfolio-deped-uniform.jpg" alt="DepEd MATATAG Sublimation Polo" loading="lazy">
+          <div class="portfolio-overlay"><span>DepEd MATATAG Polo</span></div>
+        </div>
+        <div class="portfolio-item fade-up" data-category="athletic" onclick="openLightbox(this)">
+          <img src="images/portfolio-fullsub-tshirt.jpg" alt="Full Sublimation T-Shirt" loading="lazy">
+          <div class="portfolio-overlay"><span>Running Club Full Sub Tee</span></div>
+        </div>
+        <div class="portfolio-item fade-up" data-category="uniform" onclick="openLightbox(this)">
+          <img src="images/portfolio-org-polo.jpg" alt="Organization Polo" loading="lazy">
+          <div class="portfolio-overlay"><span>Organization Polo Shirt</span></div>
+        </div>
+        <div class="portfolio-item fade-up" data-category="athletic" onclick="openLightbox(this)">
+          <img src="images/portfolio-pickleball.jpg" alt="Pickleball Jersey" loading="lazy">
+          <div class="portfolio-overlay"><span>Pickleball Team Jersey</span></div>
+        </div>
+        <div class="portfolio-item fade-up" data-category="athletic" onclick="openLightbox(this)">
+          <img src="images/portfolio-sports-comp.jpg" alt="Sports Competition Shirt" loading="lazy">
+          <div class="portfolio-overlay"><span>BIDA Sports 2026</span></div>
+        </div>
+        <div class="portfolio-item fade-up" data-category="uniform" onclick="openLightbox(this)">
+          <img src="images/portfolio-mswdo.jpg" alt="MSWDO Government Uniform" loading="lazy">
+          <div class="portfolio-overlay"><span>MSWDO Villareal Uniform</span></div>
+        </div>
+        <div class="portfolio-item fade-up" data-category="uniform" onclick="openLightbox(this)">
+          <img src="images/portfolio-corporate.jpg" alt="Corporate T-Shirt" loading="lazy">
+          <div class="portfolio-overlay"><span>Corporate Branded Shirt</span></div>
+        </div>
+        <div class="portfolio-item fade-up" data-category="athletic" onclick="openLightbox(this)">
+          <img src="images/portfolio-athletic-hoodie.jpg" alt="Athletic Hoodie" loading="lazy">
+          <div class="portfolio-overlay"><span>Full Sub Athletic Hoodie</span></div>
+        </div>
+        <div class="portfolio-item fade-up" data-category="events" onclick="openLightbox(this)">
+          <img src="images/portfolio-events.jpg" alt="Alumni Event Shirt" loading="lazy">
+          <div class="portfolio-overlay"><span>Alumni Homecoming Shirt</span></div>
+        </div>
+        <div class="portfolio-item fade-up" data-category="athletic" onclick="openLightbox(this)">
+          <img src="images/portfolio-singlet.jpg" alt="Running Singlet" loading="lazy">
+          <div class="portfolio-overlay"><span>Running Singlet</span></div>
+        </div>
+        <div class="portfolio-item fade-up" data-category="uniform" onclick="openLightbox(this)">
+          <img src="images/portfolio-firefighter.jpg" alt="Firefighter Jersey" loading="lazy">
+          <div class="portfolio-overlay"><span>Firefighter Service Jersey</span></div>
+        </div>
+        <div class="portfolio-item fade-up" data-category="events" onclick="openLightbox(this)">
+          <img src="images/portfolio-batch-shirts.jpg" alt="Batch Event Shirts" loading="lazy">
+          <div class="portfolio-overlay"><span>Batch Event Order</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-content fade-up">
+        <p class="section-label">Our Story</p>
+        <h2 class="section-title">Crafted with Purpose</h2>
+        <p class="section-subtitle">More than a printing company — we are a creative production partner built on craftsmanship, service, and community.</p>
+        <p class="about-text">Established in 2009, EBiZ Solutions and Supplies has grown from a local printing provider in Samar into a trusted partner for businesses, schools, government agencies, sports teams, and organizations, delivering large-format printing, custom uniforms, full sublimation apparel, and cut-and-sew manufacturing solutions tailored to each client's needs.</p>
+        <div class="about-highlight">
+          <p>"Every order carries a bigger purpose. When clients work with EBiZ, they are not only receiving professionally made products — they are also supporting a business model that strengthens households, empowers women, and helps create opportunity within local communities."</p>
+        </div>
+        <p class="about-text">A significant part of our manufacturing is carried out by skilled stay-at-home mothers and local sewers, many working within or near their own barangays. We take pride in providing compensation above government minimum standards, because we believe dignified work deserves fair value.</p>
+        <div class="about-values">
+          <div class="value-item">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <div>
+              <h4>Community Impact</h4>
+              <p>Empowering local sewers and mothers</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div>
+              <h4>Quality Assurance</h4>
+              <p>Precision in every stitch and print</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div>
+              <h4>Fair Wages</h4>
+              <p>Above minimum compensation standards</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div>
+              <h4>Since 2009</h4>
+              <p>16+ years of trusted service</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual fade-up">
+        <div class="about-image-main">
+          <img src="images/portfolio-batch-shirts.jpg" alt="EBiZ production — batch of custom shirts ready for delivery" loading="lazy">
+        </div>
+        <div class="about-badge">
+          <div class="badge-number">16+</div>
+          <div class="badge-text">Years Strong</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-info fade-up">
+        <p class="section-label">Get in Touch</p>
+        <h2 class="section-title">Let's Create Together</h2>
+        <p class="section-subtitle">Have a project in mind? Whether it's a team of 20 or an order of 2,000, we'd love to hear from you and bring your vision to life.</p>
+        <div class="contact-methods">
+          <div class="contact-method">
+            <div class="contact-method-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <h4>Phone / Viber</h4>
+              <p><a href="tel:+639190772119">0919-077-2119</a></p>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="contact-method-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <h4>Location</h4>
+              <p>Brgy. Buray, Paranas, Samar 6702</p>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="contact-method-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </div>
+            <div>
+              <h4>Facebook</h4>
+              <p><a href="https://www.facebook.com/MadeByEBiz" target="_blank" rel="noopener">facebook.com/MadeByEBiz</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrapper fade-up">
+        <h3>Send Us a Message</h3>
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Juan Dela Cruz" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="0917-xxx-xxxx">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@email.com">
+          </div>
+          <div class="form-group">
+            <label for="service">Service Needed</label>
+            <select id="service" name="service">
+              <option value="">Select a service</option>
+              <option value="sublimation">Full Sublimation Printing</option>
+              <option value="uniforms">Corporate / School Uniforms</option>
+              <option value="athletic">Athletic &amp; Sports Wear</option>
+              <option value="events">Event / Group Orders</option>
+              <option value="design">Custom Design Services</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Tell Us About Your Project</label>
+            <textarea id="message" name="message" placeholder="Describe your project, quantity, timeline, or any details..." required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">EBiZ</div>
+          <div class="footer-tagline">Made Together.</div>
+          <div class="footer-bar"></div>
+          <p>Crafted with purpose. Trusted for quality. Rooted in community since 2009. We help brands grow and communities earn.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/MadeByEBiz" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Sublimation Printing</a></li>
+            <li><a href="#services">Cut &amp; Sew</a></li>
+            <li><a href="#services">Custom Design</a></li>
+            <li><a href="#services">Team Orders</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+639190772119">0919-077-2119</a></li>
+            <li>Brgy. Buray, Paranas</li>
+            <li>Samar 6702</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2009&ndash;2026 EBiZ Solutions and Supplies. All rights reserved.</span>
+        <span>Crafted with purpose.</span>
+      </div>
+    </div>
+    <div class="footer-bottom-gradient"></div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <img id="lightboxImg" src="" alt="Portfolio image">
+  </div>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Mobile menu
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    // Close mobile menu on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Portfolio filter
+    function filterPortfolio(category) {
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      document.querySelectorAll('.portfolio-item').forEach(item => {
+        if (category === 'all' || item.dataset.category === category) {
+          item.style.display = '';
+          item.style.opacity = '0';
+          setTimeout(() => { item.style.opacity = '1'; item.style.transition = 'opacity 0.4s'; }, 50);
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // Lightbox
+    function openLightbox(el) {
+      const img = el.querySelector('img');
+      document.getElementById('lightboxImg').src = img.src;
+      document.getElementById('lightboxImg').alt = img.alt;
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('lightbox').addEventListener('click', (e) => {
+      if (e.target === e.currentTarget) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // Form handler
+    function handleSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const name = form.name.value;
+      const phone = form.phone.value;
+      const email = form.email.value;
+      const service = form.service.value;
+      const message = form.message.value;
+
+      // Build mailto or messenger link
+      const subject = encodeURIComponent(`Inquiry from ${name} — ${service || 'General'}`);
+      const body = encodeURIComponent(`Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\n\nMessage:\n${message}`);
+
+      // Open Facebook Messenger as primary contact
+      const messengerUrl = `https://m.me/MadeByEBiz?text=${body}`;
+      window.open(messengerUrl, '_blank');
+
+      // Show confirmation
+      form.innerHTML = `
+        <div style="text-align:center; padding:40px 0;">
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#00c4cc" stroke-width="2" style="margin-bottom:16px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <h3 style="color:#1a1a2e;margin-bottom:8px;">Message Sent!</h3>
+          <p style="color:#6c757d;">Thank you, ${name}. We'll get back to you soon.</p>
+        </div>
+      `;
+    }
+
+    // Smooth scroll for all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

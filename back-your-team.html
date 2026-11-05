@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="EBiZ Back Your Team: apply for a complete team uniform sponsorship. Review eligibility, video requirements, consent forms, and contest mechanics.">
+<title>Back Your Team | EBiZ — Made Together</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14202c;--muted:#586473;--line:#dbe3e8;--bg:#f4f6f8;--orange:#ee5a24;--deep:#ca3e13;--teal:#02757d;--white:#fff;--radius:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:15px/1.65 Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg)}
+a{color:var(--teal)}.wrap{width:min(1100px,calc(100% - 36px));margin:auto}
+.top{background:#fff;border-bottom:1px solid var(--line)}.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:18px 0}
+.brand{text-decoration:none;color:var(--ink);font-size:1.55rem;font-weight:900;letter-spacing:-1px}.brand small{display:block;font-size:.65rem;color:#777;font-weight:600;letter-spacing:2px;text-transform:uppercase}.top a.back{font-size:.9rem;font-weight:650;text-decoration:none}
+.hero{background:linear-gradient(120deg,#151f2d 12%,#223044 65%,#3b2b29);color:#fff;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;inset:auto -10% -160px auto;width:510px;height:510px;transform:rotate(27deg);background:linear-gradient(110deg,transparent 28%,#ff6a27 28%,#ff6a27 35%,transparent 35%,transparent 44%,#ff6a27 44%,#ff6a27 52%,transparent 52%);opacity:.2}.hero .wrap{position:relative;padding:62px 0 70px}
+.eyebrow{display:inline-block;border:1px solid #ffffff50;padding:6px 12px;border-radius:40px;color:#ffd0b6;font-size:.72rem;letter-spacing:2px;font-weight:800;text-transform:uppercase}
+.hero h1{max-width:750px;margin:18px 0 14px;font-size:clamp(2.6rem,6.5vw,5rem);line-height:1.07;letter-spacing:-.06em}.hero h1 em{font-style:normal;color:#ff8b55}
+.hero p{max-width:660px;font-size:1.06rem;color:#d4dce4}.kpis{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}.chip{padding:9px 14px;background:#ffffff16;border:1px solid #ffffff25;border-radius:10px;font-size:.84rem;font-weight:700}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 295px;gap:26px;align-items:start;padding:35px 0 70px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 12px 40px rgba(23,39,54,.045);margin-bottom:20px;padding:28px}
+.card h2{margin:0 0 10px;font-size:1.35rem;letter-spacing:-.025em}.card h3{font-size:1rem;margin:21px 0 6px}.card p{color:var(--muted);margin:0 0 10px}
+.alert{padding:14px 17px;border-radius:11px;background:#fff4e8;color:#733a15;border:1px solid #f4d1ad;font-size:.88rem;font-weight:650}
+.alert.ok{background:#ecf8f3;color:#155a39;border-color:#b5e3cb}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:17px}.num{background:#f5f8fa;border-radius:12px;padding:16px}.num b{display:block;font-size:1.1rem}.num small{color:var(--muted)}
+ol,ul{padding-left:20px;margin:10px 0 0}li{margin:6px 0;color:#40505e}strong{color:#17202a}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.span{grid-column:1/-1}
+label.field{display:block;font-size:.85rem;font-weight:750;color:#24303e}
+input,select,textarea{display:block;width:100%;margin-top:7px;padding:12px 13px;font:inherit;color:var(--ink);border:1px solid #becbd4;border-radius:9px;background:#fff;transition:border-color .15s}
+input:focus,select:focus,textarea:focus{outline:3px solid #f7ceb7;border-color:var(--orange)}textarea{resize:vertical;min-height:96px}input[type=file]{padding:13px;background:#fafbfc}
+.help{font-size:.76rem;color:#657584;font-weight:400;margin:4px 0 0}.sectionhead{display:flex;align-items:center;gap:9px;padding:12px 0;border-bottom:1px solid var(--line);margin:14px 0 17px;font-weight:850}.step{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#1d2938;color:white;font-size:.8rem}
+.checkrow{display:flex;align-items:flex-start;gap:10px;margin:12px 0;color:#384b58;font-size:.83rem;line-height:1.55}.checkrow input{flex:0 0 auto;width:19px;height:19px;margin:1px 0 0;accent-color:var(--orange)}
+.actions{display:flex;align-items:center;gap:15px;flex-wrap:wrap;margin-top:22px}.btn{display:inline-flex;align-items:center;justify-content:center;border:0;background:var(--orange);color:white;padding:13px 18px;border-radius:10px;font:800 .9rem Inter,sans-serif;text-decoration:none;cursor:pointer}.btn:hover{background:var(--deep)}.btn.secondary{background:#172a39}.btn:disabled{opacity:.45;cursor:not-allowed}
+details{border-top:1px solid var(--line);padding:13px 0}details summary{font-weight:750;cursor:pointer;list-style-position:outside}details>div{padding:9px 3px;font-size:.89rem;color:#465766}
+.policy{font-size:.85rem;background:#f7fafc;padding:14px;border-radius:10px;max-height:285px;overflow:auto;border:1px solid var(--line)}.policy p,.policy li{font-size:.85rem;color:#40505e}
+aside{position:sticky;top:20px}aside .card{padding:22px}aside h3{margin:0 0 12px}aside p,aside li{font-size:.84rem}aside .callout{padding:14px;background:#f3f7f7;border-radius:10px}
+.footer{background:#111b27;color:#d1dce5;text-align:center;padding:28px 16px;font-size:.83rem}.footer a{color:#ffb590}
+#status{margin-top:12px;font-size:.88rem}#status.error{color:#b42b16}#status.success{color:#1d714c}progress{width:100%;height:11px;accent-color:var(--orange);display:none}
+[hidden]{display:none!important}
+@media(max-width:850px){.layout{grid-template-columns:1fr}aside{position:static}.grid{grid-template-columns:1fr}.nums{grid-template-columns:1fr}}
+@media(max-width:520px){.card{padding:20px}.hero .wrap{padding:45px 0}.top a.back{font-size:.77rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+<script src="sponsor-config.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js" defer></script>
+<script src="assets/team-challenge.js" defer></script>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="index.html">EBiZ<small>Made Together.</small></a><a class="back" href="index.html">← Back to EBiZ</a></div></header>
+<main>
+<section class="hero"><div class="wrap"><span class="eyebrow">Sports community initiative · 2027</span><h1>YOUR TEAM.<br>YOUR STORY.<br><em>OUR GEAR.</em></h1><p>Tell us why your team deserves to be backed. One eligible team will receive up to 18 customized playing uniform sets, designed and made by EBiZ.</p>
+<div class="kpis"><span class="chip">ONE winning team</span><span class="chip">UP TO 18 uniform sets</span><span class="chip">REGION VIII ONLY</span><span class="chip">FREE TO ENTER</span></div></div></section>
+<div class="wrap layout">
+<div>
+<section class="card"><div class="alert" id="launchNotice" role="status">Pre-launch draft. Applications cannot be accepted until DTI approval and secure upload activation.</div>
+<h2 style="margin-top:20px">How it works</h2><div class="nums"><div class="num"><b>01. Tell your story</b><small>Produce a 30–60 second original video.</small></div><div class="num"><b>02. Get consent</b><small>Team authorization + signed individual releases.</small></div><div class="num"><b>03. Upload once</b><small>Submit all three files before the deadline.</small></div></div>
+<p style="margin-top:16px">EBiZ reviews eligibility and documents before publishing any video. Posting is never automatic.</p></section>
+<section class="card" id="requirements"><h2>Video standards & eligibility</h2><p>Consistent presentation protects participants and gives each team a fair opportunity.</p>
+<ul><li>Eligible: school, barangay, or formally organized community teams based in <strong>Region VIII (Eastern Visayas)</strong>: Samar, Northern Samar, Eastern Samar, Leyte, Southern Leyte, or Biliran.</li>
+<li>Applicable sports: basketball, volleyball, futsal, and other organized team sports with <strong>6–18 named eligible team members</strong>. A roster above 18 is not fully covered.</li>
+<li>Each team may submit <strong>one entry only</strong>, through an authorized adult (18+). No purchases, fees, or EBiZ accounts are required.</li>
+<li>Video: <strong>30–60 seconds, MP4, 9:16 portrait, minimum 720×1280, maximum 100 MB</strong>, clear voice and lighting. No watermarks, copyrighted music, AI-generated contestant impersonations, or misleading staging.</li>
+<li>Suggested structure: 0–5 seconds team introduction; 5–20 who you are; 20–45 why you need support; 45–60 team commitment and closing.</li>
+<li>Do not film children without consent, conduct dangerous stunts, capture active road traffic while riding, or expose contact details, school IDs, homes, or precise routines.</li>
+<li>Filming on school premises or use of school names, seals, uniforms, and facilities requires permission from the competent school authority.</li>
+<li>A school team needs <strong>principal/school head authorization plus coach/instructor endorsement</strong>; community teams need signed authorization from the responsible coach/coordinator. <strong>Every identifiable adult participant must sign a media consent; every identifiable minor must have parent/legal guardian consent and age-appropriate assent.</strong></li></ul>
+<p style="margin-top:16px"><a class="btn secondary" href="forms/sponsorship-consents.html" target="_blank" rel="noopener">Open printable consent & endorsement pack ↗</a></p></section>
+<section class="card" id="timeline"><h2>Proposed calendar (Philippine time)</h2><p>Dates remain <strong>tentative until the DTI-approved mechanics are finalized</strong>. Any approved adjustments will be disclosed consistently.</p>
+<div class="nums"><div class="num"><b id="entryDates">Jan 11–24, 2027</b><small>Entry submission window</small></div><div class="num"><b id="voteDates">Feb 1–7, 2027</b><small>Verified public voting</small></div><div class="num"><b id="awardDate">Feb 10, 2027</b><small>Winner announced</small></div></div>
+</section>
+<section class="card" id="rules"><h2>Official mechanics — proposed for DTI review</h2>
+<details open><summary>Prize and exclusions</summary><div>One winning team receives up to <strong>18 custom two-piece playing kits</strong> (jersey and shorts; equivalent sport-specific top/bottom where appropriate), with one approved design, player names and numbers, and an EBiZ sponsor mark. Maximum 18 sets in total; no extra sets, shoes, protective equipment, cash, transport, tournament registration, travel, or ongoing sponsorship. One delivery destination within Region VIII is included. The final prize valuation, material specifications, size chart, tax treatment, and published permit details must be fixed before launch.</div></details>
+<details><summary>Selection, transparency and anti-fraud</summary><div>Up to eight eligible finalists are selected using uniform criteria. Final scores: <strong>30% team story and goals, 25% demonstrated need/community involvement, 15% authenticity/presentation, and 30% verified public vote</strong>. Judges use documented rubrics and must disclose conflicts. One verified person may cast one official vote for one team during the voting period; duplicate, automated, purchased, incentivized or fraudulent votes are excluded after documented review. Facebook hearts, shares, comments and follower counts <strong>DO NOT count as official votes</strong>. Ties are resolved by higher judging subtotal, then higher story score, then a recorded neutral draw under any applicable DTI oversight. Voting opens only after all finalist entries are posted.</div></details>
+<details><summary>Acceptance, deadlines, award and complaints</summary><div>Only one complete submission per distinct team before the server-enforced deadline. Corrections are accepted only before cutoff through the authorized official channel, without preferential extensions. Late, missing, incomplete, inauthentic, unsafe, or unconsented entries are rejected with documented reasons. Publication is subject to manual verification. The winning team is notified through its registered representative. Prize redemption is available for <strong>at least 60 days from winner notification/publication, whichever is later</strong>; documentation and roster approval are then required to start production. Allow a target 21 working days from final approved artwork, final sizes, and claim confirmation; deadlines for any particular sporting event are not guaranteed. Teams may send concerns through the EBiZ website; consumer rights and DTI jurisdiction are unaffected.</div></details>
+<details><summary>Rights and third-party platforms</summary><div>Entries must be original and legally authorized. EBiZ receives a non-exclusive, royalty-free, time-limited license to review, trim, caption, format, and publish the approved submission on EBiZ channels for this challenge and related recap communications for up to 12 months after the winner announcement, subject to data-subject rights and withdrawal requests where applicable. No permission is given to synthesize participant faces/voices with AI or sell footage to third parties. Submitters must not include unlicensed music, brands, or identifiable bystanders. The promotion is not sponsored, endorsed, administered by, or associated with Facebook or Instagram; participants release those platforms from promotion-related claims to the extent permitted by law. School/DepEd/EVRAA affiliation is not implied.</div></details>
+<details><summary>Restrictions and fairness</summary><div>Residents/team members must satisfy the published eligibility criteria. EBiZ owners, employees, contest judges, contractors involved in judging, and immediate household members cannot compete. Paid or coordinated engagement manipulation and harassment lead to review and possible disqualification. Documented decisions are appealable through the sponsor's contact channel within three calendar days of notice, without waiving statutory complaint avenues. EBiZ cannot unilaterally alter material dates, prizes or mechanics once approved by DTI. No additional hidden criteria will be applied.</div></details>
+</section>
+<section class="card" id="privacy"><h2>Privacy & child-safeguarding notice</h2><div class="policy">
+<p><strong>Controller:</strong> EBiZ Solutions and Supplies, Brgy. Buray, Paranas, Samar, Philippines. Contact and privacy rights requests: <a href="index.html#contact">official EBiZ contact page</a>.</p>
+<p><strong>Purpose:</strong> eligibility verification, anti-fraud, consent checking, fair judging, authorized media publication, prize delivery, and lawful recordkeeping. Only the authorized adult representative's contact information is requested in the online form. Signed releases may contain participant and guardian names/signatures and shall remain private.</p>
+<p><strong>Basis:</strong> participation and publication require informed and specific consents where applicable; certain minimal verification/recordkeeping may be supported by other lawful grounds. Marketing consent is optional and independent of contest eligibility.</p>
+<p><strong>Recipients:</strong> limited EBiZ administrators and necessary hosting/cloud processors bound by appropriate safeguards; only approved videos and selected non-sensitive team identifiers will appear publicly. Submission PDFs and raw videos remain in access-controlled, private storage. No school IDs, children's personal contact details, precise birthdates, or identity-document images are requested.</p>
+<p><strong>Retention proposal:</strong> unsuccessful entrants' private raw videos/releases deleted 180 days after the final announcement, unless needed for an actual dispute or lawful obligation; winning team award records up to 24 months; published approved promotional material removed from EBiZ-controlled channels after 12 months unless fresh consent is obtained or another lawful basis applies. Public reposts beyond EBiZ control may persist. Technical anti-abuse logs minimized and deleted within 30 days absent an incident. Final retention schedule must be reviewed before launch.</p>
+<p><strong>Rights:</strong> request access, correction, restriction, withdrawal where applicable, or deletion by contacting EBiZ. Withdrawal before publication prevents posting; withdrawal after posting triggers review and reasonable takedown of content controlled by EBiZ. You may complain to the National Privacy Commission. Withdrawing essential contestant consent may make an entry ineligible, without penalty beyond the contest.</p></div></section>
+<section class="card" id="apply"><h2>Official team application</h2><p>Use a responsible adult team representative. Do not enter private information about children here.</p>
+<form id="teamForm" enctype="multipart/form-data" novalidate>
+<fieldset id="applicationFields" disabled style="border:0;padding:0;margin:0">
+<div class="sectionhead"><span class="step">1</span> Team information</div>
+<div class="grid">
+<label class="field">Team name *<input name="teamName" maxlength="90" minlength="3" autocomplete="organization" required></label>
+<label class="field">Sport *<select name="sport" required><option value="">Choose sport</option><option>Basketball</option><option>Volleyball</option><option>Futsal</option><option>Other organized team sport</option></select></label>
+<label class="field">Organization type *<select name="orgType" required><option value="">Choose type</option><option value="school">School team</option><option value="barangay">Barangay team</option><option value="club">Community club/team</option></select></label>
+<label class="field">School/club/barangay name *<input name="organization" minlength="3" maxlength="110" required></label>
+<label class="field">Province *<select name="province" required><option value="">Choose province</option><option>Samar</option><option>Northern Samar</option><option>Eastern Samar</option><option>Leyte</option><option>Southern Leyte</option><option>Biliran</option></select></label>
+<label class="field">City/municipality *<input name="municipality" maxlength="80" minlength="2" required></label>
+<label class="field">Number of players/coaches receiving kits (6–18) *<input type="number" name="kitCount" min="6" max="18" step="1" required></label>
+<label class="field">Are any people identifiable in the video under 18? *<select name="hasMinors" required><option value="">Choose</option><option value="yes">Yes — guardians and minor assents signed</option><option value="no">No</option></select></label>
+<label class="field span">Why does your team deserve sponsorship? (50–600 characters) *<textarea name="story" minlength="50" maxlength="600" placeholder="Tell us about your goals, challenges, and community contribution." required></textarea></label>
+</div>
+<div class="sectionhead"><span class="step">2</span> Authorized adult representative</div>
+<div class="grid">
+<label class="field">Full name *<input name="repName" maxlength="100" autocomplete="name" required></label>
+<label class="field">Role (coach, coordinator, etc.) *<input name="repRole" maxlength="80" required></label>
+<label class="field">Email address *<input type="email" name="repEmail" maxlength="160" autocomplete="email" required></label>
+<label class="field">Mobile number (+63 or 09…) *<input type="tel" name="repPhone" pattern="(?:\\+63|0)9[0-9]{9}" placeholder="09XXXXXXXXX" required></label>
+</div>
+<div class="sectionhead"><span class="step">3</span> Signed documents and video</div>
+<div class="alert">Prepare your files before starting. Signed documents are NEVER displayed publicly. Upload all three in one attempt.</div>
+<div class="grid" style="margin-top:16px">
+<label class="field span">Video (.mp4, 30–60 sec, up to 100MB) *<input type="file" name="video" accept="video/mp4,.mp4" required><span class="help" id="videoInfo">Portrait 9:16 at least 720×1280; original video with clear speech. Keep the raw file until the contest is concluded.</span></label>
+<label class="field span">SIGNED participant and guardian consent packet (.pdf, up to 20MB) *<input type="file" name="consents" accept="application/pdf,.pdf" required><span class="help">Combine all individual release forms into one PDF. Every visible/identifiable person must be covered.</span></label>
+<label class="field span">SIGNED institution / coach authorization (.pdf, up to 10MB) *<input type="file" name="endorsement" accept="application/pdf,.pdf" required><span class="help">School: principal/school head AND coach/instructor. Other teams: responsible coach/coordinator and authorized adult representative.</span></label>
+</div>
+<div class="sectionhead"><span class="step">4</span> Declarations and permissions</div>
+<div class="policy" style="max-height:230px"><p>By signing as an adult representative, I certify that I am 18 or older and authorized to submit this entry. All roster members are genuine, the team falls within the defined geographic scope, and this is its only entry. I have inspected every scene of the footage and obtained all required written adult permissions, child assent, guardian consent and school/venue authorizations before submission. I have not forged, altered or collected signatures by proxy without authorization. I understand EBiZ will review and may independently verify endorsements and consent prior to publication, and the team may be disqualified for a substantiated material misrepresentation. Signing does not waive any mandatory consumer, privacy or child-protection rights.</p></div>
+<label class="checkrow"><input type="checkbox" name="terms" required> <span>I have read and accept the proposed contest eligibility, prize limits, selection criteria, timelines, exclusions, and integrity rules above. *</span></label>
+<label class="checkrow"><input type="checkbox" name="privacyConsent" required> <span>I have read the privacy notice and consent to processing of the submitted personal data for screening and administration. *</span></label>
+<label class="checkrow"><input type="checkbox" name="mediaAuthority" required> <span>I confirm the attached authentic signed consents authorize EBiZ to review and, only after approval, publish/edit the video within the limited stated scope. *</span></label>
+<label class="checkrow"><input type="checkbox" name="schoolAuthority" required> <span>I have obtained the principal/school-head and coach approvals where applicable, and have permission for filmed locations, uniforms, trademarks, and music. *</span></label>
+<label class="checkrow"><input type="checkbox" name="truth" required> <span>I certify the information is accurate and I am authorized to bind the submitting team to these published contest conditions. *</span></label>
+<label class="checkrow"><input type="checkbox" name="marketingOptin"> <span><strong>Optional:</strong> I would like EBiZ to contact me separately about future apparel offers. Not required to enter.</span></label>
+<label class="field span" style="margin-top:17px">Typed legal name / electronic representative signature *<input name="signature" maxlength="100" placeholder="Must match representative full name" required></label>
+<div id="turnstile"></div>
+<div class="actions"><button class="btn" type="submit" id="submitButton">Submit team application</button><span class="help">No submission is final until a receipt is displayed.</span></div>
+<progress id="uploadProgress" max="3" value="0" aria-label="File uploads completed"></progress>
+<div id="status" aria-live="polite"></div>
+</fieldset>
+</form></section>
+</div>
+<aside>
+<div class="card"><h3>At a glance</h3><p><strong>Free entry.</strong> No purchases, likes, shares, or tagged friends required.</p><div class="callout"><strong>IMPORTANT</strong><br>Facebook reactions and shares help the campaign gain visibility, but do not determine official votes.</div></div>
+<div class="card"><h3>Don't upload without consent</h3><p>Signed releases are required for everyone identifiable in your video, including guardians for minors and the child's own assent.</p><p><a href="forms/sponsorship-consents.html">Print the consent pack ↗</a></p></div>
+<div class="card"><h3>Prize boundaries</h3><p>One team, up to 18 kits, one design, one regional delivery. No cash substitute. Individual players cannot claim the prize separately.</p></div>
+<div class="card"><h3>Need help?</h3><p>Contact EBiZ through the official <a href="index.html#contact">website</a>. Do not send minors' IDs or signatures through public Facebook comments.</p></div>
+</aside>
+</div>
+</main>
+<footer class="footer">EBiZ Solutions and Supplies · Made Together. · <a href="index.html">Home</a> · Campaign details are provisional until the DTI permit is issued.</footer>
+</body>
+</html>

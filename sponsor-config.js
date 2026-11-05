@@ -10,7 +10,7 @@ window.EBIZ_CHALLENGE = Object.freeze({
   votingCloses: "2027-02-07T23:59:00+08:00",
   winnerAnnouncement: "2027-02-10T18:00:00+08:00",
   maxKits: 18,
-  videoLimitMb: 100,
+  videoLimitMb: 45,
   maxConsentMb: 20,
   maxEndorsementMb: 10,
   supabaseUrl: "",    // Public project URL only; never service-role credentials

@@ -1,5 +1,7 @@
 # EBiZ — Back Your Team 2027 | PRIVATE BUILD / LAUNCH CHECKLIST
 
+**Architecture update (November 6, 2026):** EBiZ's existing private Google Drive has been prepared as the durable storage location for approved and unapproved video submissions and consent documents, with checksum-verified archival from temporary Supabase intake. Facebook is the primary publication channel, and its public Page feed is embedded on the sponsor website. Read [DRIVE_AND_FACEBOOK_WORKFLOW.md](DRIVE_AND_FACEBOOK_WORKFLOW.md) for the new Google OAuth, Drive folder permission, archiver activation and mirroring steps. **Neither Google Drive synchronization nor the contest application is live until credentials, permit and end-to-end tests are complete.**
+
 Status: **NOT LIVE.** The website route, consent pack, database schema and Edge Function are implemented in the feature branch. The current public EBiZ site is unchanged until this PR is merged.
 
 ## Architecture

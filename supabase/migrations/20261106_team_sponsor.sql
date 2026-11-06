@@ -35,6 +35,8 @@ create table if not exists public.team_sponsor_submissions (
   video_path text not null,
   consents_path text not null,
   endorsement_path text not null,
+  drive_archived_at timestamptz,
+  drive_file_ids jsonb,
   admin_notes text,
   review_at timestamptz,
   review_by text
